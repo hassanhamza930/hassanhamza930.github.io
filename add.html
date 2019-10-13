@@ -1,0 +1,77 @@
+<!--
+
+<div style="text-align: center;">
+<h1>ADD POINTER</h1>    
+</div>
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ADD</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+        <h1 style="text-align: center;">
+            <button type="button" class="btn btn-dark">Submit</button>
+        </h1>
+    <div id="map">
+        
+    </div>
+    
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            });
+
+            function placeMarker(position, map) {
+                
+                var marker = new google.maps.Marker({
+                    position: position,
+                    map: map
+                });
+                map.panTo(position);
+                
+            }
+
+            map.addListener('click', function (e) {
+                placeMarker(e.latLng, map);
+                console.log(e.latLng.lat());
+                console.log(e.latLng.lng());
+            });
+
+           
+        }
+
+
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6BrTtbUsJxdWJuRPI99wOs_6hXa_WhdU
+    &callback=initMap" async defer></script>
+</body>
+
+</html>
