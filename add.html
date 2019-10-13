@@ -11,7 +11,8 @@
 <html>
 
 <head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>ADD</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
@@ -32,38 +33,61 @@
 </head>
 
 <body>
+    <form>
+        <h6 style="text-align: center;">Only the latest Marker will be taken into consideration </h6>
+        <input name="min" placeholder="Enter Minimum price">
+        <input name="max" placeholder="Enter Maximum price">
+        <input id="lat" placeholder="Latitude">
+        <input id="lng" placeholder="Longitude">
+
         <h1 style="text-align: center;">
             <button type="button" class="btn btn-dark">Submit</button>
         </h1>
+    </form>
     <div id="map">
-        
     </div>
-    
+
     <script>
         var map;
+        var lata;
+        var langa;
+        var markers=[];
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: -34.397, lng: 150.644 },
                 zoom: 8
             });
 
+            function setMapOnAll(map) {
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(map);
+                }
+            }
+
             function placeMarker(position, map) {
-                
+
                 var marker = new google.maps.Marker({
                     position: position,
                     map: map
                 });
+                markers.push(marker);
                 map.panTo(position);
-                
+
             }
 
             map.addListener('click', function (e) {
+
+                setMapOnAll(null);
                 placeMarker(e.latLng, map);
-                console.log(e.latLng.lat());
-                console.log(e.latLng.lng());
+                lata = e.latLng.lat();
+                langa = e.latLng.lng();
+                document.getElementById("lat").setAttribute("value", lata);
+                document.getElementById("lng").setAttribute("value", lata);
+                console.log(lata);
+                console.log(langa);
             });
 
-           
+
         }
 
 
