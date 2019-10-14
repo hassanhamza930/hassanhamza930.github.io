@@ -33,15 +33,16 @@
 </head>
 
 <body>
-    <form>
+    <form action="http://localhost:5000/add">
         <h6 style="text-align: center;">Only the latest Marker will be taken into consideration </h6>
+        <input name="name" placeholder="Enter name">
+        <input name="info" placeholder="Enter Info">
         <input name="min" placeholder="Enter Minimum price">
         <input name="max" placeholder="Enter Maximum price">
-        <input id="lat" placeholder="Latitude">
-        <input id="lng" placeholder="Longitude">
-
+        <input id="lat" name="lat" placeholder="Latitude">
+        <input id="lng" name="lng" placeholder="Longitude">
         <h1 style="text-align: center;">
-            <button type="button" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark">Submit</button>
         </h1>
     </form>
     <div id="map">
@@ -82,7 +83,7 @@
                 lata = e.latLng.lat();
                 langa = e.latLng.lng();
                 document.getElementById("lat").setAttribute("value", lata);
-                document.getElementById("lng").setAttribute("value", lata);
+                document.getElementById("lng").setAttribute("value", langa);
                 console.log(lata);
                 console.log(langa);
             });
