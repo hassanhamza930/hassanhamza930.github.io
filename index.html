@@ -1,79 +1,24 @@
-<body class="animated animatedFadeInUp fadeInUp" >
+<iframe  id="audio" width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<button onclick="play()">
+    PLAY
+</button>
 
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <h1 style='text-align: center;'>
-        <b>ENTER THE URL OF THE VIDEO TO DOWNLOAD</b>
-    </h1>
-    <h6 style='text-align: center;'>
-        <b>The video will start once you press submit you can rename the files later</b>
-    </h6>
-    <br>
-    <form action="https://freakh2o.pythonanywhere.com">
-    <h3 style="text-align: center;">
-        <br>
-        <br>
-        <input  type="text" name="url" placeholder="Enter the link for youtube video">
-        <br>
-        <br>
-        <button type="submit" class="btn btn-dark">Submit</button>
-    </h3>
-    
-    </form>
-    
-    
-    
-    
-    
-    </body>
-    
-    
-    
-    <style>
-    
-    body {
-        padding: 40px;
-    }
-    
-    /* Animation */
-    
-    @keyframes fadeInUp {
-        from {
-            transform: translate3d(0,40px,0)
-        }
-    
-        to {
-            transform: translate3d(0,0,0);
-            opacity: 1
-        }
-    }
-    
-    @-webkit-keyframes fadeInUp {
-        from {
-            transform: translate3d(0,40px,0)
-        }
-    
-        to {
-            transform: translate3d(0,0,0);
-            opacity: 1
-        }
-    }
-    
-    .animated {
-        animation-duration: 1s;
-        animation-fill-mode: both;
-        -webkit-animation-duration: 1s;
-        -webkit-animation-fill-mode: both
-    }
-    
-    .animatedFadeInUp {
-        opacity: 0
-    }
-    
-    .fadeInUp {
-        opacity: 0;
-        animation-name: fadeInUp;
-        -webkit-animation-name: fadeInUp;
-    }
-    
-    </style>
+
+<script>
+
+function change()
+{
+    document.getElementById("audio").setAttribute("src","https://www.youtube.com/embed/7HS1aKTTp8I?autoplay=1")
+}
+
+
+function play()
+{
+    document.getElementById("audio").setAttribute("src","https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1")
+    setTimeout(function() { change() }, 15000);
+}
+//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
+
+</script>
