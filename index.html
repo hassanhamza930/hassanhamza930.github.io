@@ -1,26 +1,89 @@
-<iframe  id="audio" width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h1></h1>
-<button onclick="play()">
-    PLAY
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"
+  integrity="sha256-kRbW+SRRXPogeps8ZQcw2PooWEDPIjVQmN1ocWVQHRY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
+
+<div id="toMove"  style="float:left;width:400px;height: 100vh;background-color:#cfd0db;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+  <h1 id="textables"
+    style="float:left;margin-left:150px;margin-bottom:150px;font-size: 100px;text-align: center;font-family: 'Big Shoulders Text">
+
+  </h1>
+</div>
+
+
+<button onclick="reload()" class="button" style="width:200px;margin-left:150px;margin-top:200px">
+  <h1 style="font-family:'Big Shoulders Text' ;">ANIMATE </h1>
 </button>
+
 
 
 
 <script>
 
-function change()
+function reload()
 {
-    document.getElementById("audio").setAttribute("src","https://www.youtube.com/embed/7HS1aKTTp8I?autoplay=1")
-    setTimeout(function() { play() }, 10000);
+  var b= anime({
+    targets:'.button',
+    translateY:[
+    { value: 50},
+    { value: 100},
+    { value: 150},
+    { value: 30},
+  ],
+  duration:5000,
+  loop:true,
+  easing:'easeInOutSine'
+  })
 }
 
+  var a = new anime({
+    targets: '#textables',
+    translateY: 150,
+    translateX: {
+      value: -100,
+      duration: 1000,
+      delay: 2000
+    },
+    loop:2,
+    duration: 1000,
+    easing: 'easeInOutSine'
+  });
 
-function play()
-{
-    document.getElementById("audio").setAttribute("src","https://www.youtube.com/embed/AY9blLYMKnI?autoplay=1")
-    setTimeout(function() { change() }, 10000);
-}
-//https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1
+
+
+
+  var options = {
+    strings: [" ", '<h3 style="text-align:center">CODE <div style="color:#cc3336">RED</div></h3>', '<h3 style="text-align:center"><div style="color:#cc3336">RED</div></h3>', "????✔", '<h3 style="text-align:center">CODE <div style="color:#cc3336">RED</div></h3>'],
+    typeSpeed: 100,
+    backSpeed: 20,
+  };
+
+  var typed = new Typed('#textables', options);
+
+
+
+
 
 
 </script>
+
+<style>
+
+  .button:hover{
+    background-color: red;
+  }
+
+.button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #555555;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
