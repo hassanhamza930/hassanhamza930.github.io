@@ -1,89 +1,37 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"
-  integrity="sha256-kRbW+SRRXPogeps8ZQcw2PooWEDPIjVQmN1ocWVQHRY=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
-
-<div id="toMove"  style="float:left;width:400px;height: 100vh;background-color:#cfd0db;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-
-  <h1 id="textables"
-    style="float:left;margin-left:150px;margin-bottom:150px;font-size: 100px;text-align: center;font-family: 'Big Shoulders Text">
-
-  </h1>
-</div>
-
-
-<button onclick="reload()" class="button" style="width:200px;margin-left:150px;margin-top:200px">
-  <h1 style="font-family:'Big Shoulders Text' ;">ANIMATE </h1>
-</button>
-
-
-
-
-<script>
-
-function reload()
-{
-  var b= anime({
-    targets:'.button',
-    translateY:[
-    { value: 50},
-    { value: 100},
-    { value: 150},
-    { value: 30},
-  ],
-  duration:5000,
-  loop:true,
-  easing:'easeInOutSine'
-  })
-}
-
-  var c = new anime({
-    targets: '#textables',
-    translateY: 150,
-    translateX: {
-      value: -100,
-      duration: 1000,
-      delay: 2000
-    },
-    loop:2,
-    duration: 1000,
-    easing: 'easeInOutSine'
-  });
-
-
-
-
-  var options = {
-    strings: [" ", '<h3 style="text-align:center">CODE <div style="color:#cc3336">RED</div></h3>', '<h3 style="text-align:center"><div style="color:#cc3336">RED</div></h3>', "????✔", '<h3 style="text-align:center">CODE <div style="color:#cc3336">RED</div></h3>'],
-    typeSpeed: 100,
-    backSpeed: 20,
-  };
-
-  var typed = new Typed('#textables', options);
-
-
-
-
-
-
-</script>
-
 <style>
-
-  .button:hover{
-    background-color: red;
-  }
-
-.button {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #555555;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+.title{
+    color: #1E9D58;
+    font-family: 'Roboto';
+    font-size: 30px;
 }
+.sub{
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+.underline{
+    margin-left:0px;
+    background-color:seagreen;
+    height:10px;
+    width:170px
+}
+
 </style>
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+<div style="margin-left:100px;float:left;width:500px;height:500px;">
+<h1 class="title">BRACKETS <div class="underline"></div></h1>
+<h2 class="sub">IT SOLUTIONS</h2>
+<h2 class="sub"> WHATSAPP : +923174149260</h2>
+<h2 class="sub"> GMAIL  : xaidsaeed@gmail.com</h2>
+<h2 class="title">WEBSITE </h2>
+<h2 class="sub">BUILD AND DEPLOY A FULLY FUNCTIONAL WEBSITE WITH HOSTING SERVICES INCLUDED </h2>
+<h2 class="title">APP DEVELOPMENT </h2>
+<h2 class="sub">BUILD IOS AND ANDROID APPS FOR YOUR BUSINESS </h2>
+<h2 class="title">TROUBLESHOOTING</h2>
+<h2 class="sub"> RESOLVE TECHNICAL DIFFICULITIES INCLUDING DEPLOYMENT AND SETUP ASWELL AS FIX BUGS IN SYSTEMS </h2>
+
+</div>
