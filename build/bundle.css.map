@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\..\\App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\nvar positions=[\n\t{\n\t\tx:0,\n\t\ty:0\n\t},\n\t{\n\t\tx:0,\n\t\ty:0\n\t}\n];\n\nvar texts=[\n\t\"THIS IS HAMZA\",\n\t\"ya hamaza\"\n]\n\nfunction dragOver(event){\n\tx=event.clientX;\n\ty=event.clientY;\n}\n\n\n</script>\n\n\n{#each texts as text,i}\n\n<h1 style=\"position:absolute;top:{positions[i].y-100}px;left:{positions[i].x-100}px;\" draggable=true\n on:dragend={(event)=>{\n\tconsole.log(event);\n\tpositions[i].x=event.clientX;\n\tpositions[i].y=event.clientY;\n}}\n\non:drag={(event)=>{\n\tpositions[i].x=event.clientX;\n\tpositions[i].y=event.clientY;\n}}\n\n>Hamza is indeed the best in the world</h1>\n\n{/each}\n\n\n<style>\n\t\n\n\th1 {\n\t\tcolor: #ff3e00;\n\t\ttext-transform: uppercase;\n\t\tfont-size: 4em;\n\t\tfont-weight: 100;\n\t}\n\n\t\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAgDC,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,OAAO,CACd,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,GAAG,AACjB,CAAC"
+}
