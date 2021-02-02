@@ -2,7 +2,6 @@
 <html>
 <head>
   <!--
-    just testing
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
 
@@ -37,7 +36,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=192612540');
+        navigator.serviceWorker.register('flutter_service_worker.js');
       });
     }
   </script>
